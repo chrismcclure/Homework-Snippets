@@ -9,22 +9,29 @@
 <body>
     <!-- I know break lines are bad.  Wanted to make it look clean, fast with out a CSS file -->
     <form action="">
+
+       <p>
         <label for="first-name">First Name</label>
         <input id="first-name" type="text">
-        <br>
-        <br>
+        </p>
+
+        <p>
         <label for="last-name">Last Name</label>
         <input id="last-name" type="text">
-        <br>
-        <br>
-        <label for="email">Email</label>
-        <input type="email">
-        <br>
-        <br>
+        </p>
+
+
+       <p>
+        <label for="emailinput">Email</label>
+        <input type="email" id="emailinput">
+         </p>
+
+         <p>
         <label for="password">Password</label>
         <input type="password">
-        <br>
-        <br>
+         </p>
+
+         <p>
         <label for="gender">What is your gender?</label>
         <select>
 
@@ -33,37 +40,41 @@
             <option value="unknown">Unknown</option>
             <option value="no-answer">Prefer Not Answer</option>
         </select>
-        <br>
-        <br>
+       </p>
+
+        <p>
         <label for="textarea">Type some cool stuff about yourself...</label>
         <br>
         <textarea name="about" id="textarea" cols="30" rows="10" placeholder="Type stuff here..."></textarea>
-        <br>
-        <br>
+        </p>
+
+
+        <p>
         <label for="color">What is your favorite method for picking color?</label>
         <br>
-        <input type="radio" name="color" value="GRB" checked>RGB
+        <label><input type="radio" name="color" value="GRB"> RGB</label>
         <br>
-        <input type="radio" name="color" value="HSL">HSL
+        <label><input type="radio" name="color" value="HSL"> HSL </label>
         <br>
-        <input type="radio" name="color" value="hex">HEX
-        <br>
-        <br>
+        <label><input type="radio" name="color" value="hex"> HEX </label>
+        </p>
+
+
+        <p>
         <label for="transport">What is the your favorite method for transport?</label>
         <br>
-        <input type="checkbox" name="transport" value="Plane"> Plane
+        <label><input type="checkbox" name="transport" value="Plane"> Plane</label>
         <br>
-        <input type="checkbox" name="transport" value="Train"> Train
+        <label><input type="checkbox" name="transport" value="Train"> Train</label>
         <br>
-        <input type="checkbox" name="transport" value="Bike"> Bike
+        <label><input type="checkbox" name="transport" value="Train"> Cat</label>
         <br>
-        <input type="checkbox" name="transport" value="Your Mom" checked="checked"> Your Mom
+        <label><input type="checkbox" name="transport" value="Your Mom" checked="checked"> Your Mom</label>
         <br>
-        <input type="checkbox" name="transport" value="Helicopter"> Helicopter
-        <br>
-        <input type="checkbox" name="transport" value="Car"> Car
-        <br>
-        <br>
+        <label><input type="checkbox" name="transport" value="Helicopter"> Helicopter</label>
+      </p>
+
+
         <input type="submit" value="Submit">
 
 
