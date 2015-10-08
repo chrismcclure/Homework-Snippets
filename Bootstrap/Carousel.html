@@ -19,8 +19,13 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
     <style>
-        .buffer { margin: 60px 0; }
+        .buffer { margin-top: 60px; margin-bottom: 60px;}
         .top-buffer { margin-top: 60px;}
+        .carousel-content {
+    color:black;
+    display:flex;
+    align-items:center;
+}
     </style>
   </head>
    <body>
@@ -92,7 +97,7 @@
 
           <div class="item">
               <div  class="container">
-                    <div class="buffer">
+                    <div class=" carousel-content buffer">
                   <h1 class="text-center">Another example headline.</h1>
                   <p class="text-center">Cras justo odio, dapibus ac facilisis in, egestas eget quam. Donec id elit non mi porta gravida at eget metus. Nullam id dolor id nibh ultricies vehicula ut id elit.</p>
                    <p class="text-center">
@@ -162,6 +167,81 @@
         </div>
   </div>
 
+          <div class="container-fluid top-buffer">
+              <div id="my-slider" class="carousel slide" data-ride="carousel">
+                  <!--Indicators dot nav-->
+                  <ol class="carousel-indicators">
+                        <li data-target="#my-slider" data-slide-to="0" class="active"></li>
+                        <li data-target="#my-slider" data-slide-to="1"></li>
+                  </ol>
+
+                  <!--wrapper for slides-->
+                  <div class="carousel-inner" role="listbox">
+                      <div class="item active">
+                          <img class="img-responsive center-block" src="images/cats-q-g-233-179-4.jpg" alt="cat stuff"/>
+                          <div class="carousel-caption">
+                              <H2>this is a cat</H2>
+                              <p>I like cats and you should too!</p>
+                          </div>
+                      </div>
+                       <div class="item">
+                          <img class="img-responsive center-block" src="images/cats-q-g-233-179-4.jpg" alt="cat stuff"/>
+                          <div class="carousel-caption">
+                              <H2>Second Cat Picture</H2>
+                              <p>This is the second picture</p>
+                          </div>
+                      </div>
+                  </div>
+
+                  <!--Navigation Arrows-->
+                  <a class="left carousel-control" href="#my-slider" role="button" data-slide="prev">
+                      <span class="glyphicon glyphicon-chevron-left"></span>
+                      <span class="sr-only">previous</span>
+                  </a>
+                    <a class="right carousel-control" href="#my-slider" role="button" data-slide="next">
+                      <span class="glyphicon glyphicon-chevron-right"></span>
+                      <span class="sr-only">next</span>
+                  </a>
+
+              </div>
+          </div>
+       <hr class="featurette-divider">
+
+    <div class="container top-buffer">
+        <div class="row featurette">
+            <div class="col-md-7">
+                <h2 class="featurette-heading">First featurette heading. It'll blow your mind.</h2>
+                <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo</p>
+            </div>
+            <div class="col-md-5">
+                <img src="images/cats-q-g-233-179-4.jpg" alt="more cats" class="featurette-image img-responsive center-block">
+            </div>
+        </div>
+             <hr class="featurette-divider">
+        <div class="row featurette">
+              <div class="col-md-5">
+                <img src="images/cats-q-g-233-179-4.jpg" alt="more cats" class="featurette-image img-responsive center-block">
+            </div>
+            <div class="col-md-7">
+                <h2 class="featurette-heading">Oh yeah, it's that good. See for yourself.</h2>
+                <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo</p>
+            </div>
+    <hr class="featurette-divider">
+          <div class="row featurette">
+            <div class="col-md-7">
+                <h2 class="featurette-heading">And lastly, this one. Checkmate.</h2>
+                <p class="lead">Donec ullamcorper nulla non metus auctor fringilla. Vestibulum id ligula porta felis euismod semper. Praesent commodo cursus magna, vel scelerisque nisl consectetur. Fusce dapibus, tellus ac cursus commodo</p>
+            </div>
+            <div class="col-md-5">
+                <img src="images/cats-q-g-233-179-4.jpg" alt="more cats" class="featurette-image img-responsive center-block">
+            </div>
+        </div>
+        </div>
+    </div>
+
+    <div class="container buffer">
+         &copy; 2015 ChrisCo Inc.  <a href="#">Privacy</a>  <a href="#">Terms</a>  <a class="pull-right" href="#">Back To Top</a>
+    </div>
 
     <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
