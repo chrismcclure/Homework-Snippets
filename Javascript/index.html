@@ -5,16 +5,52 @@
     <title>JavaScript Fundamentals</title>
     <style>
         body{background-color: lightgray}
-        p{text-align: center;}
+        h1, h3, p{text-align: center;}
+        input::-webkit-input-placeholder {text-align: center;}
+        div{ width: 40%; height: 300px; margin: auto; margin-top: 40px; border: 1px solid black; background-color: whitesmoke;}
+        .date{padding-top: 4px; height:150px;}
+
     </style>
 </head>
 <body>
+  <h1>Super Cool JavaScript!</h1>
+<div>
+   <h3>For My First Trick, <br>You choose three numbers and I will multiple them...</h3>
 
-   <p>This is the page with a bunch of cool JavaScript</p>
+   <form action="">
+      <p>
+        Input Number 1: <input type="text" placeholder=" number 1" id="num1" autocomplete="off">
+        </p>
 
+        <p>
+        Input Number 2: <input type="text" placeholder=" number 2" id="num2" autocomplete="off">
+       </p>
 
+         <p>
+         Input Number 3: <input type="text" placeholder=" number 3" id="num3" autocomplete="off">
+        </p>
 
-</body>
-<script type="text/javascript">alert('This is the index alert');</script>
+       <p>
+        <button onclick="return myFunction()">Multiple Numbers</button>
+       </p>
+
+       <p>Your final total is: <span id="result"></span> </p>
+
+   </form>
+
+    <p>
+<button onclick="ReloadFunction()">Clear Numbers and Try Again!</button></p>
+    </div>
+
+    <div class="date">
+       <h3>Today's data and time:</h3>
+        <p><span id="date"></span> </p>
+        <p>
+        <button onclick="ReloadFunction()">Get Current Time!</button>
+        </p>
+    </div>
+
 <script type="text/javascript" src="myjavascript.js"> </script>
+</body>
+
 </html>
