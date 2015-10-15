@@ -13,7 +13,7 @@
     <p>Proof that I can pass values around the page like your mom at a biker bar.    </p>
         <hr>
          <p>
-             What mood are you in? <input type="text" id="usermood" name="sq" >
+             What mood are you in? <input type="text" id="usermood"  >
          </p>
         <p>
         <button onclick='return getFeeling(usermood.value)'>Mood Function</button>
@@ -23,12 +23,20 @@
 
          <hr>
          <p>
-             Number to sqaure <input type="text" id="userinput" name="sq" >
+             Number to sqaure <input type="text" id="userinput" >
          </p>
           <p>
         <button onclick='return multiplySelf(userinput.value)'>Sqaure Function</button>
          </p>
          <p>The sqaure is: <span id="totalsq"></span> </p>
+         <hr>
+           <p>
+             What is your age? <input type="text" id="userage" >
+         </p>
+          <p>
+        <button onclick='return drinkingAge(userage.value)'>Sqaure Function</button>
+         </p>
+         <p>The sqaure is: <span id="ageanswer"></span> </p>
 
 <script type="text/javascript" src="functions.js"></script>
 </body>
