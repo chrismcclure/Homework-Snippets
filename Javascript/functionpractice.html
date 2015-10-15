@@ -10,14 +10,25 @@
 </head>
 <body>
 
-           <p>Press The Button If You Dare...</p>
+    <p>Proof that I can pass values around the page like your mom at a biker bar.    </p>
+        <hr>
+         <p>
+             What mood are you in? <input type="text" id="usermood" name="sq" >
+         </p>
         <p>
-        <button onclick='getFeeling("happy")'>Happy Function</button>
+        <button onclick='return getFeeling(usermood.value)'>Mood Function</button>
          </p>
 
-          <p>
-        <button onclick='multiplySelf(3)'>Multiple Function</button>
+         <p>Your current mood is: <span id="moodresult"></span> </p>
+
+         <hr>
+         <p>
+             Number to sqaure <input type="text" id="userinput" name="sq" >
          </p>
+          <p>
+        <button onclick='return multiplySelf(userinput.value)'>Sqaure Function</button>
+         </p>
+         <p>The sqaure is: <span id="totalsq"></span> </p>
 
 <script type="text/javascript" src="functions.js"></script>
 </body>

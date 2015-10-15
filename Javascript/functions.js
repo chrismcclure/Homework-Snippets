@@ -7,10 +7,14 @@
 
 
 function getFeeling(mood) {
-alert(mood);
+document.getElementById('moodresult').innerHTML = mood;
+return false;
 }
 
+
 function multiplySelf(x) {
-alert(x * x);
+var total = x * x;
+document.getElementById('totalsq').innerHTML = total;
+return false;
 }
 
