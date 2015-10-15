@@ -70,11 +70,22 @@ var i;
 for (i = 0; i < randomStuff.length; i++) {
     text += randomStuff[i] + "<br>";
 }
-
 document.getElementById("array").innerHTML = text;
 
+//example of an Object
+var person = {
+    firstName:"John",
+    lastName:"Doe",
+    age:50,
+    eyeColor:"blue"
+};
 
+//How to access a single key or value
+var key = Object.keys(person)[0];
+var value = person.firstName;
 
+document.getElementById('key').innerHTML = key;
+document.getElementById('value').innerHTML = value;
 
 
 
