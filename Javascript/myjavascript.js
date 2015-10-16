@@ -1,13 +1,24 @@
 //alert('From External JS File');
 document.getElementById("date").innerHTML = Date();
 
+function addValues(group){
+
+    var totalcount = 0;
+for (var i = 0; i < group.length; i++){
+    totalcount += Number(group[i].value);
+}
+    return totalcount;
+}
+
+
 function myFunction() {
 
-var first = parseInt(document.getElementById("num1").value);
-var second = parseInt(document.getElementById("num2").value);
-var third = parseInt(document.getElementById("num3").value);
-var total = first * second * third;
-document.getElementById("result").innerHTML = total;
+//var first = parseInt(document.getElementById("num1").value);
+//var second = parseInt(document.getElementById("num2").value);
+//var third = parseInt(document.getElementById("num3").value);
+//var total = first * second * third;
+
+document.getElementById("result").innerHTML = addValues(document.getElementsByClassName('whatever'));
 return false;
 };
 
