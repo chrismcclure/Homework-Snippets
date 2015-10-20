@@ -1,11 +1,11 @@
-
-//empty array of all the todo items
 //One Array To Rule Them All!
+//empty array to fill with the todo items
 var arrayOfToDoItems = [];
 
 
 //Function, upon Button Click Add User Item to Array of Todos
 function addItemToDoToList(item) {
+
     //add item to array
     arrayOfToDoItems.push(item);
 
@@ -14,6 +14,7 @@ function addItemToDoToList(item) {
     checkboxitem.type = "checkbox";
     checkboxitem.id = "todoitem";
     checkboxitem.name = item;
+    // took a while to figure out that I didn't need quotes or () to call function
     checkboxitem.onclick = rem;
 
     //create label for each checkbox
@@ -32,36 +33,44 @@ function addItemToDoToList(item) {
     document.getElementById("myList").appendChild(node);
 
     // Display total number of items in todo list
-    var totalitems = arrayOfToDoItems.length;
-    document.getElementById("total").innerHTML = totalitems;
+    itemsInList();
 
     //Clear the todo item input box
     document.forms['todoinput'].reset();
 
+    //return false to prevent form from reloading page
     return false;
 }
 
 //e variable is event
 function rem(e) {
 
-    // create a string of itemn to be removes
+    // create a string of item to be removed
     var itemToBeRemove = e.target.name;
 
-    //what number the index number of the item is
-    var a = arrayOfToDoItems.indexOf(itemToBeRemove);
+    //find index number of item to be removed
+    var indexnumber = arrayOfToDoItems.indexOf(itemToBeRemove);
 
     //remove the item from array of to do items
-    arrayOfToDoItems.splice(a, 1);
+    arrayOfToDoItems.splice(indexnumber, 1);
 
     // define event target, and define list item
     var eventarget = e.target;
+
+    //define parent element,in this case "LI"
     var parent = eventarget.parentElement;
 
     //remove list item
     parent.parentNode.removeChild(parent);
 
     // Display total number of items in todo list
+    itemsInList();
+}
+
+
+// Function counts and displays total number of tasks
+function itemsInList() {
+
     var totalitems = arrayOfToDoItems.length;
     document.getElementById("total").innerHTML = totalitems;
-
 }
