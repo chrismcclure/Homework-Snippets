@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>To Do List</title>
+    <link rel="stylesheet" href="todocss.css">
+</head>
+<body>
+  <h1>Chris's Super Cool To Do List</h1>
+   <div class="InputArea">
+       <h2>Input Your To Do Item</h2>
+       <form action="" name="todoinput">
+        <p>
+        Input Your Items<input type="text" id="userItem" placeholder="Task You Need To Do">
+        </p>
+        <p>
+        <button onclick="return addItemToDoToList(userItem.value)">Click To Add to Your To Do List</button>
+        </p>
+        </form>
+   </div>
+
+    <div class="todoitems">
+      <h2>Current Tasks You Need To Do:</h2>
+      <p>Click the checkbox button when you complete the item to remove it from list</p>
+       <ul id="myList">
+       </ul>
+        <p>Total number of to do items on your list: <span id="total"></span></p>
+    </div>
+
+<script type="text/javascript" src="todojs.js"> </script>
+</body>
+</html>
