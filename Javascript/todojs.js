@@ -1,19 +1,16 @@
 //One Array To Rule Them All!
-//empty array to fill with the todo items
+//empty array to fill with list items that contain the todo items
 var arrayOfToDoItems = [];
-
 
 //Function, upon Button Click Add User Item to Array of Todos
 function addItemToDoToList(item) {
 
-    //add item to array
-    arrayOfToDoItems.push(item);
-
     //createinput checkbox and it's attributes
     var checkboxitem = document.createElement('input');
     checkboxitem.type = "checkbox";
-    checkboxitem.id = "todoitem";
     checkboxitem.name = item;
+    checkboxitem.className = "todoitem";
+
     // took a while to figure out that I didn't need quotes or () to call function
     checkboxitem.onclick = rem;
 
@@ -25,6 +22,9 @@ function addItemToDoToList(item) {
     //create list item
     var node = document.createElement("LI");
 
+    // add list items to array of list items
+    arrayOfToDoItems.push(node);
+
     //append both the checkbox and label to each list item
     node.appendChild(checkboxitem);
     node.appendChild(label);
@@ -33,7 +33,7 @@ function addItemToDoToList(item) {
     document.getElementById("myList").appendChild(node);
 
     // Display total number of items in todo list
-    itemsInList();
+    itemsInList(arrayOfToDoItems);
 
     //Clear the todo item input box
     document.forms['todoinput'].reset();
@@ -45,32 +45,27 @@ function addItemToDoToList(item) {
 //e variable is event
 function rem(e) {
 
-    // create a string of item to be removed
-    var itemToBeRemove = e.target.name;
-
-    //find index number of item to be removed
-    var indexnumber = arrayOfToDoItems.indexOf(itemToBeRemove);
-
-    //remove the item from array of to do items
-    arrayOfToDoItems.splice(indexnumber, 1);
-
-    // define event target, and define list item
+    // define event target is the checkbox
     var eventarget = e.target;
 
     //define parent element,in this case "LI"
     var parent = eventarget.parentElement;
 
+    //remove the parenet element from the array list items
+    arrayOfToDoItems.splice(arrayOfToDoItems.indexOf(parent), 1);
+
     //remove list item
     parent.parentNode.removeChild(parent);
 
-    // Display total number of items in todo list
-    itemsInList();
+    //Display total number of items in todo list
+    itemsInList(arrayOfToDoItems);
 }
 
 
 // Function counts and displays total number of tasks
-function itemsInList() {
-
-    var totalitems = arrayOfToDoItems.length;
+function itemsInList(array) {
+    var totalitems = array.length;
     document.getElementById("total").innerHTML = totalitems;
 }
+
+
