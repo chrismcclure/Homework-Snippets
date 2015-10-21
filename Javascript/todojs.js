@@ -10,6 +10,7 @@ function addItemToDoToList(item) {
     checkboxitem.type = "checkbox";
     checkboxitem.name = item;
     checkboxitem.className = "todoitem";
+    checkboxitem.data-index = ""
 
     // took a while to figure out that I didn't need quotes or () to call function
     checkboxitem.onclick = rem;
