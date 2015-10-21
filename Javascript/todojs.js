@@ -1,16 +1,23 @@
 //One Array To Rule Them All!
 //empty array to fill with list items that contain the todo items
-var arrayOfToDoItems = [];
+
+var stuffOnYourBrowser = localStorage;
+var index = stuffOnYourBrowser.length;
+
+//Upon load I need to have a funtion that display all the items in local storage
+//for each value in local storage, append to my myList
 
 //Function, upon Button Click Add User Item to Array of Todos
 function addItemToDoToList(item) {
+    //Incre
+    index++;
 
     //createinput checkbox and it's attributes
     var checkboxitem = document.createElement('input');
     checkboxitem.type = "checkbox";
     checkboxitem.name = item;
     checkboxitem.className = "todoitem";
-    checkboxitem.data-index = ""
+    checkboxitem.id = index;
 
     // took a while to figure out that I didn't need quotes or () to call function
     checkboxitem.onclick = rem;
@@ -23,8 +30,8 @@ function addItemToDoToList(item) {
     //create list item
     var node = document.createElement("LI");
 
-    // add list items to array of list items
-    arrayOfToDoItems.push(node);
+    // add list items to local storage
+    stuffOnYourBrowser.setItem(index, item);
 
     //append both the checkbox and label to each list item
     node.appendChild(checkboxitem);
@@ -34,7 +41,7 @@ function addItemToDoToList(item) {
     document.getElementById("myList").appendChild(node);
 
     // Display total number of items in todo list
-    itemsInList(arrayOfToDoItems);
+    itemsInList(stuffOnYourBrowser);
 
     //Clear the todo item input box
     document.forms['todoinput'].reset();
@@ -52,20 +59,24 @@ function rem(e) {
     //define parent element,in this case "LI"
     var parent = eventarget.parentElement;
 
+
+    var itemnumber = e.target.id;
+
     //remove the parenet element from the array list items
-    arrayOfToDoItems.splice(arrayOfToDoItems.indexOf(parent), 1);
+    stuffOnYourBrowser.removeItem(itemnumber);
 
     //remove list item
     parent.parentNode.removeChild(parent);
 
     //Display total number of items in todo list
-    itemsInList(arrayOfToDoItems);
+    itemsInList(stuffOnYourBrowser);
 }
 
 
 // Function counts and displays total number of tasks
-function itemsInList(array) {
-    var totalitems = array.length;
+function itemsInList(localstorage) {
+    var totalitems = localstorage.length;
+    alert(totalitems);
     document.getElementById("total").innerHTML = totalitems;
 }
 
