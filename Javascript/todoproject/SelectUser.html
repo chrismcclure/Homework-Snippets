@@ -2,19 +2,18 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>To Do List</title>
+    <title>Select User</title>
 
-    <!-- Latest compiled and minified CSS -->
+      <!-- Latest compiled and minified CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css">
     <!-- My sweet ass stlyes that will rock your eyeballs-->
     <link rel="stylesheet" href="todocss.css">
     <!--Fonts-->
     <link href="http://fonts.googleapis.com/css?family=Open+Sans|Dosis:400,800" rel="stylesheet" type="text/css" />
-
 </head>
-<body onload="itemsInList(stuffOnYourBrowser);">
+<body>
 
-<div class="container-fluid header">
+    <div class="container-fluid header">
   <nav class="navbar navbar-inverse navbar-fixed-top">
     <div class="navbar-header">
           <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false">
@@ -30,6 +29,7 @@
 </div>
 
 
+
 <div class="jumbotron">
   <div class="container">
       <h1>Chris's Super Cool To Do List</h1>
@@ -37,30 +37,25 @@
   </div>
 </div>
 
-
-  <!--Div contains input area for new -->
-   <div class="InputArea">
-       <h2>What Do You Need To Do?</h2>
-       <form action="" name="todoinput">
+<div class="selectUser bluediv">
+    <h2> Please Select Your To Do List</h2>
+    <ul id="users">
+    </ul>
+    <p>OR</p>
+    <h2>Create A New Personal To Do List</h2>
+      <p>
+        <p id="inputNewUser">Input Your Name:</p> <p><input type="text" id="username" placeholder="Who's To Do List Is This?"> </p>
         <p>
-        Input Your Items: <br><input type="text" id="userItem" placeholder="Task You Need To Do">
+        <button class="btn btn-default btn-lg" onclick="makeNewUserObject(username.value)">Click To Make A New To Do List</button>
         </p>
-        <p>
-        <button class="btn btn-default btn-lg" onclick="return addItemToDoToList(userItem.value)">Click To Add to Your To Do List</button>
-        </p>
-        </form>
-   </div>
 
-<!--This div contains the all the UL where I will create LI-->
-    <div class="todoitems">
-      <h2>Current Tasks You Need To Do:</h2>
-      <p>Click the checkbox button when you complete the item to remove it from list</p>
-        <div class="listholder">
-       <ul id="myList">
-       </ul>
-        </div>
-        <p id="numberDisplay">Total number of to do items on your list: <span id="total"></span></p>
-    </div> <!--End List of todo items-->
+</div>
+
+
+
+
+
+
 
 
     <footer class="footer">

@@ -20,7 +20,7 @@ ul {
     padding: 0;
 }
 
-.InputArea, .todoitems {
+.bluediv {
     width: 50%;
     border: 1px solid black;
     background-color: cornflowerblue;
@@ -51,6 +51,10 @@ form > p {
     margin-bottom: 18px;
 }
 
+#inputlabel{
+    margin-bottom: 10px;
+}
+
 h1, h2, h3, h4 {
     text-align: center;
     font-family: 'Dosis', sans-serif;
@@ -74,12 +78,11 @@ li{
     height: 280px;
 }
 
-#numberDisplay{
-
+.numberDisplay{
     font-size: 20px;
 }
 
-#total{
+#total, #totaldone {
     font-weight: bold;
 }
 
@@ -94,5 +97,4 @@ footer{
 
 .footerItems {
     margin-right: 50px;
-
 }
