@@ -43,11 +43,16 @@
     </ul>
     <p>OR</p>
     <h2>Create A New Personal To Do List</h2>
-      <p>
-        <p id="inputNewUser">Input Your Name:</p> <p><input type="text" id="username" placeholder="Who's To Do List Is This?"> </p>
+<!--      <p>-->
+
+
+       <form method="get" action="todo.html" name="CreateNewList">
+        <p id="inputNewUser">Input Your Name:</p> <p><input type="text" id="username" name="NewListName" placeholder="Who's To Do List Is This?"> </p>
         <p>
-        <button class="btn btn-default btn-lg" onclick="makeNewUserObject(username.value)">Click To Make A New To Do List</button>
+        <button type="submit" class="btn btn-default btn-lg" onclick="makeNewUserObject(username.value)">Click To Make A New To Do List</button>
         </p>
+        </form>
+
 
 </div>
 

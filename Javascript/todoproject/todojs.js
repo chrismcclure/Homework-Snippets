@@ -1,49 +1,54 @@
+//Homework for the weekend.
+//- Pass the user name through the URL when the button of clicks on the User Select
+//- Make all the list work based on the local storage
+//- Add dates
+
 
 // local Storage of all the tasks that are added and deleted when completed
 var stuffOnYourBrowser = localStorage;
 var index = stuffOnYourBrowser.length;
-//This will hold the element to be dome
-var todoTasks = ["Add A To Do Items"];
-//Array of arrays, this will be stored as the value in the local storage
 
 // User name
-var userName;
-user = {};
-//Object to put it all together
+var cleanName;
 
-
-
-
-
+//constructor to create name and list object
 function PersonalizedList(listname){
         this.listname = listname;
         //Array of tasks that will have all the pending todo items
         this.todoTasks = ["Add A To Do Items", "Do a backflip"];
 };
 
-
+//make an new instance of list called user.
+//What to I need to do to pass my user object around?
 function makeNewUserObject(name){
-    user =  new PersonalizedList(name);
+    var user =  new PersonalizedList(name);
     stuffOnYourBrowser.setItem(user.listname, user.todoTasks);
 //    alert("The list name is: " + user.listname + " and the first task is: " + user.todoTasks[0]);
-    window.location.assign("todo.html");
+//    window.location.assign("todo.html");
     return
 }
 
 
-//All the functions to be called when the pages loads to popular numbers on page with local storage data
+//All the functions to be called when the pages loads to populate numbers on page with local storage data
 function OnLoad(){
     itemsInList();
     loodStoredTasks();
-    document.getElementById("Username").innerHTML = "Juan";
+    var myParam = location.search.split('NewListName=')[1];
+    checkNullParam(myParam);
+
+    function checkNullParam(myParam){
+    if(myParam == null){
+    break;}
+    else(myParam.includes("+"))
+    {
+    cleanName = myParam.replace(/\+/g, " ");
+        }
+    return cleanName;
+    }
+    //This is an example of where I want tgo personalize the page
+    document.getElementById("Username").innerHTML = cleanName;
     document.getElementById("totaldone").innerHTML = "<br>Not Currently Working :(";
-
 }
-
-
-function jamUserNameInHTML(){
-    document.getElementsByClassName('Username').innerHTML = user.listname;
-};
 
 //Upon load I need to have a funtion that display all the items in local storage
 //for each value in local storage, append to my myList
@@ -57,8 +62,7 @@ function loodStoredTasks(){
 }
 
 
-
-//Function Add Tasks to the list by creating elements and jamming them in ul
+//Function that Add Tasks to the list by creating elements and jamming them in ul
 function addItemToDoToList(item) {
     //Increment index = id
     index++;
@@ -69,7 +73,7 @@ function addItemToDoToList(item) {
     checkboxitem.name = item;
     checkboxitem.className = "todoitem";
     checkboxitem.id = index;
-    //checkboxitem.dataset.index = index;
+    checkboxitem.dataset.index = index;
 
     // took a while to figure out that I didn't need quotes or () to call function
     checkboxitem.onclick = rem;
@@ -82,16 +86,8 @@ function addItemToDoToList(item) {
     //create list item
     var node = document.createElement("LI");
 
-    var topnumnbers = Object.keys(stuffOnYourBrowser);
-    var arrayofnumber = [];
-    for(var x in topnumnbers){
-        arrayofnumber.push(Number(x));
-    }
-    var topnumber = Math.max(arrayofnumber);
-    alert(topnumber);
-
     // add list items to local storage
-    stuffOnYourBrowser.setItem(index, item);
+    stuffOnYourBrowser.setItem(cleanName, user.todoTasks.push(item));
 
     //append both the checkbox and label to each list item
     node.appendChild(checkboxitem);
