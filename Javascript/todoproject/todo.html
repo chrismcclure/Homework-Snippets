@@ -23,16 +23,18 @@
             <span class="icon-bar"></span>
             <span class="icon-bar"></span>
           </button>
-        <a class="navbar-brand" href="#">Chris's Super Cool To Do List!</a>
-    </div>
+        <a class="navbar-brand" href="#"><span class="userName"></span>'s Super Cool To Do List!</a>
 
+
+    </div>
+  <a href="SelectUser.html" class="btn btn-primary navbar-btn my-bar-btn">Change Lists</a>
  </nav>
 </div>
 
 
 <div class="jumbotron">
   <div class="container">
-      <h1> <span id="Username"></span>'s Super Cool To Do List</h1>
+      <h1> <span class="userName"></span>'s Super Cool To Do List</h1>
       <h2>The Best To Do List Ever!</h2>
   </div>
 </div>
@@ -45,7 +47,7 @@
         <p>
         <p id="inputlabel">Input Your Items:</p> <p><input type="text" id="userItem" placeholder="Task You Need To Do"> </p>
         <p>
-        <button class="btn btn-default btn-lg" onclick="return addItemToDoToList(userItem.value)">Click To Add to Your To Do List</button>
+        <button class="btn btn-default btn-lg" onclick="return addToListOnClick(userItem.value)">Click To Add to Your To Do List</button>
         </p>
         </form>
    </div>
@@ -58,10 +60,10 @@
        <ul id="myList">
             </ul>
         </div>
-        <p class="bluediv">Total number of to do items on your list: <span id="total"></span></p>
+        <p class="">Total number of to do items on your list: <span id="total"></span></p>
     </div> <!--End List of todo items-->
 
-    <div class="bluediv">
+    <div class="bluediv hide-div">
         <h2>You've Done A lot!</h2>
         <p class="numberDisplay"> Overall you've completed this many tasks: <span id="totaldone"></span></p>
     </div>

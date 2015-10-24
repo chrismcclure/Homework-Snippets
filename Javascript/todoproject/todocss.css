@@ -6,12 +6,9 @@ body{
 .header{
 }
 
-.todoitems {
-	font-size: 20px;
-}
 
 .listholder{
-    border: 1px solid red;
+/*    border: 1px solid red;*/
     width: 40%;
     margin: 0 auto;
 }
@@ -36,6 +33,9 @@ li{
     white-space: nowrap;
 }
 
+label {
+    font-size: 20px;
+}
 
 li [type=checkbox] {
     height: 20px;
@@ -75,7 +75,6 @@ li{
     background-color: #bbb;
     padding-top: 80px;
     width: 100%;
-    height: 280px;
 }
 
 .numberDisplay{
@@ -84,6 +83,10 @@ li{
 
 #total, #totaldone {
     font-weight: bold;
+}
+
+.container h2 {
+	margin-bottom: 20px;
 }
 
 footer{
@@ -97,4 +100,12 @@ footer{
 
 .footerItems {
     margin-right: 50px;
+}
+
+.my-bar-btn {
+    margin-left: 30px;
+}
+
+.hide-div {
+	display: none;
 }
