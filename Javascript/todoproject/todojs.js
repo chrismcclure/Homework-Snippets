@@ -16,14 +16,14 @@ if(stuffOnYourBrowser.getItem(listName) != null){
 var toDoItems = stuffOnYourBrowser.getItem(listName).split(",");
 }
 
-//Button element is defined in variable
-//Both pages
-var clicky =  document.getElementById("button");
+
+
 
 
 //enables buttons when user inputs any values
 //Both Page
 function enableButtons(text){
+    var clicky =  document.getElementById("button");
     if(text.length > 0){
         clicky.disabled = false;
     }else{
@@ -31,6 +31,13 @@ function enableButtons(text){
     }
 }
 
+
+//fun way to link enter on return to click button
+function engageButton(){
+if (event.keyCode == 13){
+    document.getElementById('button').click();
+    }
+}
 
 //Used to determine what list is to be used
 //This is used on the select user page and holds value of list name
@@ -44,32 +51,47 @@ document.cookie ="ListName =" + username;
 function PersonalizedList(listname){
         this.listname = listname;
         //Array of tasks that will have all the pending todo items
-        this.todoTasks = ["Add More To Do Items", "Do a backflip"];
+        this.todoTasks = ["Make Your First To Do Item!"];
 };
 
 //make an new instance of list called user.
 //What to I need to do to pass my user object around?
 function makeNewUserObject(name){
+    var trueOrFalse = checkForDuplicateList(name);
+    alert("After the loop true or false = " + trueOrFalse);
+    if(trueOrFalse == false){
+
+    // if the name isn't taken, do all the stuff to make a new list and forward to list items
+    createCookie(name);
+    var user =  new PersonalizedList(name);
+    stuffOnYourBrowser.setItem(user.listname, user.todoTasks);
+    window.location.assign("todo.html");
+    }
+
+    // if name is taken, make user put in new name;
+    else{
+    document.getElementById('dupName').innerHTML = "That name is taken, please chose another list name!"
+    var inputbox = document.getElementById('username');
+    inputbox.value = "";
+    inputbox.placeholder = "Choose A Different Name ";
+    inputbox.style.width = "200px";
+    }
+}
+
+
+//If can't get this to work, need to ask Michael
+function checkForDuplicateList(listname){
     var halt = false;
     alert("Before the loop halt = " + halt);
     for(var x in stuffOnYourBrowser){
-        if(x.toLowerCase() === name.toLowerCase()){
+        if(x.toLowerCase() == listname.toLowerCase()){
             halt = true;
             alert("In the loop halt = " + halt);
         }
     }
     alert("After the loop halt = " + halt);
-    if(halt == false){
-    createCookie(name);
-    var user =  new PersonalizedList(name);
-    stuffOnYourBrowser.setItem(user.listname, user.todoTasks);
-    window.location.assign("todo.html");
-    }else{
-    document.getElementById('dupName').innerHTML = "That name is taken, please chose another list name!"
-     document.getElementById('username').value = " ";
-    }
+    return halt;
 }
-
 
 //All the functions to be called when the To Do List loads to populate numbers on page with local storage data
 function OnLoad(){
@@ -217,17 +239,34 @@ function popluarToDoLists(){
         }
     }
 
-    function createLinkElements(linkText){
+
+//Creates element for list of all the todo lists
+//More elements that I needed to make, but it served as a great practice creating elements and nesting them to a parent
+function createLinkElements(linkText){
+
+    var listElementToHoldEverything = document.createElement('LI');
+    listElementToHoldEverything.className = "listholderlist";
+
     var linkToUserToDoList = document.createElement('a');
     linkToUserToDoList.name = linkText;
     linkToUserToDoList.className = "listName";
     linkToUserToDoList.onclick = bakeCookie;
     linkToUserToDoList.href = "todo.html";
 
+    var deleteListButton = document.createElement('button');
+    deleteListButton.onclick = removeList2;
+    deleteListButton.className ="btn btn-danger btn-md deleteListButton";
+    deleteListButton.href = "#";
+    deleteListButton.name = linkText;
+
+    var buttonText = document.createTextNode("click to delete list");
+    deleteListButton.appendChild(buttonText);
 
     var userListName = document.createTextNode(linkText);
     linkToUserToDoList.appendChild(userListName);
-    document.getElementById("users").appendChild(linkToUserToDoList);
+    listElementToHoldEverything.appendChild(linkToUserToDoList);
+    listElementToHoldEverything.appendChild(deleteListButton);
+    document.getElementById("users").appendChild(listElementToHoldEverything);
     }
 
      function bakeCookie(e){
@@ -237,6 +276,19 @@ function popluarToDoLists(){
     }
 }
 
+function removeList2(e){
+    var listToRemove = e.target.name;
+    alert(listToRemove);
+    stuffOnYourBrowser.removeItem(listName);
+
+    // define event target is the checkbox
+    var eventarget = e.target;
+
+    //define parent element,in this case "LI"
+    var parent = eventarget.parentElement;
+    parent.parentNode.removeChild(parent);
+    popluarToDoLists();
+}
 
 function removeList(){
     stuffOnYourBrowser.removeItem(listName);

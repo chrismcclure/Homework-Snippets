@@ -48,7 +48,7 @@
     <div class="bluediv">
          <h2>Create A New Personal To Do List</h2>
         <p id="dupName"></p>
-        <p id="inputNewUser">Input Your Name:</p> <p><input type="text" id="username" oninput="enableButtons(username.value)" placeholder="Who's To Do List Is This?"> </p>
+        <p id="inputNewUser">Input Your Name:</p> <p><input type="text" id="username" onkeydown="engageButton()" oninput="enableButtons(username.value)" placeholder="Who's To Do List Is This?"> </p>
         <p>
         <button class="btn btn-default btn-lg" id="button" disabled onclick="makeNewUserObject(username.value)">Click To Make A New To Do List</button>
         </p>
