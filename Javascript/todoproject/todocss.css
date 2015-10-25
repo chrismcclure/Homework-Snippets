@@ -122,6 +122,8 @@ footer{
     color: white;
     font-weight: bold;
     margin-bottom: 10px;
+    text-transform: lowercase;
+    text-transform: capitalize;
 }
 
 .listName:hover {
@@ -151,7 +153,9 @@ footer{
     margin-left: 10px;
 }
 
-/*
-#username{
-    width: 50px;
-}*/
+
+.userName {
+    text-transform: capitalize;
+}
+
+

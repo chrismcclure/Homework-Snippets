@@ -39,7 +39,7 @@ if (event.keyCode == 13){
     }
 }
 
-//Used to determine what list is to be used
+//Makes cookie and adds to browser
 //This is used on the select user page and holds value of list name
 function createCookie(username){
 document.cookie ="ListName =" + username;
@@ -56,9 +56,9 @@ function PersonalizedList(listname){
 
 //make an new instance of list called user.
 //What to I need to do to pass my user object around?
-function makeNewUserObject(name){
+function makeNewUserObject(typedname){
+    var name = typedname.toLowerCase();
     var trueOrFalse = checkForDuplicateList(name);
-    alert("After the loop true or false = " + trueOrFalse);
     if(trueOrFalse == false){
 
     // if the name isn't taken, do all the stuff to make a new list and forward to list items
@@ -82,14 +82,11 @@ function makeNewUserObject(name){
 //If can't get this to work, need to ask Michael
 function checkForDuplicateList(listname){
     var halt = false;
-    alert("Before the loop halt = " + halt);
     for(var x in stuffOnYourBrowser){
-        if(x.toLowerCase() == listname.toLowerCase()){
+        if(x == listname.toLowerCase()){
             halt = true;
-            alert("In the loop halt = " + halt);
         }
     }
-    alert("After the loop halt = " + halt);
     return halt;
 }
 
@@ -271,15 +268,13 @@ function createLinkElements(linkText){
 
      function bakeCookie(e){
         var cookieReceipe = e.target.name;
-         //alert("Baking Cookie " + cookieReceipe);
         createCookie(cookieReceipe);
     }
 }
 
 function removeList2(e){
     var listToRemove = e.target.name;
-    alert(listToRemove);
-    stuffOnYourBrowser.removeItem(listName);
+    stuffOnYourBrowser.removeItem(listToRemove);
 
     // define event target is the checkbox
     var eventarget = e.target;
@@ -287,7 +282,11 @@ function removeList2(e){
     //define parent element,in this case "LI"
     var parent = eventarget.parentElement;
     parent.parentNode.removeChild(parent);
-    popluarToDoLists();
+//    popluarToDoLists();
+    if(stuffOnYourBrowser.key(0) == null){
+
+        document.getElementById("noUsers").innerHTML = "No Lists Availabe";
+    }
 }
 
 function removeList(){
