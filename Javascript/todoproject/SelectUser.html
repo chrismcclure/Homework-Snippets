@@ -11,7 +11,7 @@
     <!--Fonts-->
     <link href="http://fonts.googleapis.com/css?family=Open+Sans|Dosis:400,800" rel="stylesheet" type="text/css" />
 </head>
-<body>
+<body  onload="popluarToDoLists()">
 
     <div class="container-fluid header">
   <nav class="navbar navbar-inverse navbar-fixed-top">
@@ -40,26 +40,20 @@
 <div class="selectUser bluediv">
     <h2> Please Select Your To Do List</h2>
     <ul id="users">
-    <span id="additem"></span>
+    <p id="noUsers"></p>
     </ul>
-    <p>OR</p>
-    <h2>Create A New Personal To Do List</h2>
-<!--      <p>-->
-
-
-
-        <p id="inputNewUser">Input Your Name:</p> <p><input type="text" id="username" placeholder="Who's To Do List Is This?"> </p>
-        <p>
-        <button class="btn btn-default btn-lg" onclick="makeNewUserObject(username.value)">Click To Make A New To Do List</button>
-        </p>
-
-
-
 </div>
 
+       <h2>OR</h2>
+    <div class="bluediv">
+         <h2>Create A New Personal To Do List</h2>
+        <p id="dupName"></p>
+        <p id="inputNewUser">Input Your Name:</p> <p><input type="text" id="username" oninput="enableButtons(username.value)" placeholder="Who's To Do List Is This?"> </p>
+        <p>
+        <button class="btn btn-default btn-lg" id="button" disabled onclick="makeNewUserObject(username.value)">Click To Make A New To Do List</button>
+        </p>
 
-
-
+</div>
 
 
 

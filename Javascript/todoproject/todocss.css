@@ -1,6 +1,8 @@
+/* Need to fix footer */
+
 body{
     background-color: white;
-    padding-bottom: 80px;
+
 }
 
 .header{
@@ -15,6 +17,7 @@ body{
 
 ul {
     padding: 0;
+    margin-left: 20px;
 }
 
 .bluediv {
@@ -86,7 +89,7 @@ li{
 }
 
 .container h2 {
-	margin-bottom: 20px;
+	margin-bottom: 0px;
 }
 
 footer{
@@ -108,4 +111,29 @@ footer{
 
 .hide-div {
 	display: none;
+}
+
+.listName{
+    display: block;
+    text-align: center;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 46px;
+    color: white;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.listName:hover {
+	text-decoration: none;
+}
+
+#additem{
+    font-weight: bold;
+    color: firebrick;
+    font-size: 20px;
+}
+
+#dupName{
+    color: red;
+    font-weight: bold;
 }

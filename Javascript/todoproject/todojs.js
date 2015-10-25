@@ -1,5 +1,5 @@
 //Homework for the weekend.
-//Bug:  when I make my array empty then refresh page, the array is populated by one "" item
+//Question.  Are local stotage keys in alphabetically order?
 //- Add dates
 
 //Get's cookie and slices to just the listname
@@ -11,7 +11,25 @@ var stuffOnYourBrowser = localStorage;
 
 
 //Array of all the items in storage form the correct list name
+// To Do List page
+if(stuffOnYourBrowser.getItem(listName) != null){
 var toDoItems = stuffOnYourBrowser.getItem(listName).split(",");
+}
+
+//Button element is defined in variable
+//Both pages
+var clicky =  document.getElementById("button");
+
+
+//enables buttons when user inputs any values
+//Both Page
+function enableButtons(text){
+    if(text.length > 0){
+        clicky.disabled = false;
+    }else{
+         clicky.disabled = true;
+    }
+}
 
 
 //Used to determine what list is to be used
@@ -32,10 +50,24 @@ function PersonalizedList(listname){
 //make an new instance of list called user.
 //What to I need to do to pass my user object around?
 function makeNewUserObject(name){
+    var halt = false;
+    alert("Before the loop halt = " + halt);
+    for(var x in stuffOnYourBrowser){
+        if(x.toLowerCase() === name.toLowerCase()){
+            halt = true;
+            alert("In the loop halt = " + halt);
+        }
+    }
+    alert("After the loop halt = " + halt);
+    if(halt == false){
     createCookie(name);
     var user =  new PersonalizedList(name);
     stuffOnYourBrowser.setItem(user.listname, user.todoTasks);
     window.location.assign("todo.html");
+    }else{
+    document.getElementById('dupName').innerHTML = "That name is taken, please chose another list name!"
+     document.getElementById('username').value = " ";
+    }
 }
 
 
@@ -74,9 +106,11 @@ function addUserNameToHTML(newHTML, className){
 function makeFirstList(){
     //foreach loop to go throught my array of to items
     for(var k in toDoItems){
-        //if null upon the loading of the page this should appear
-        if (k == null){
-        document.getElementById('additem').innerHTML = "Please Add An Item";
+        //If no tasks, there will be a single "" item in array by default
+        //Removed items from array and tells user to create task
+        if (toDoItems[k] == ""){
+            toDoItems.splice(0,1);
+            zeroItems();
             } else{
            addItemToDoToList(toDoItems[k]);
         }
@@ -95,6 +129,8 @@ function addToListOnClick(item){
 
         //Make new element
         addItemToDoToList(item);
+
+        document.getElementById('additem').innerHTML = "";
 
     return false;
 }
@@ -168,11 +204,56 @@ function rem(e) {
 
 }
 
+//User Selecet Page, populates list of all the users
+function popluarToDoLists(){
+  //If no list are in storage,
+    if(stuffOnYourBrowser.key(0) == null){
+
+        document.getElementById("noUsers").innerHTML = "No Lists Availabe";
+        }else{
+        for(var x in stuffOnYourBrowser){
+        //creates elements one by one
+       createLinkElements(x);
+        }
+    }
+
+    function createLinkElements(linkText){
+    var linkToUserToDoList = document.createElement('a');
+    linkToUserToDoList.name = linkText;
+    linkToUserToDoList.className = "listName";
+    linkToUserToDoList.onclick = bakeCookie;
+    linkToUserToDoList.href = "todo.html";
+
+
+    var userListName = document.createTextNode(linkText);
+    linkToUserToDoList.appendChild(userListName);
+    document.getElementById("users").appendChild(linkToUserToDoList);
+    }
+
+     function bakeCookie(e){
+        var cookieReceipe = e.target.name;
+         //alert("Baking Cookie " + cookieReceipe);
+        createCookie(cookieReceipe);
+    }
+}
+
+
+function removeList(){
+    stuffOnYourBrowser.removeItem(listName);
+}
 
 // Function counts and displays total number of tasks that still need to be completed
 function itemsInList() {
     var totalitems = toDoItems.length;
+    if(totalitems == 0){
+    zeroItems();
+    }
     document.getElementById("total").innerHTML = totalitems;
+}
+
+//If no items are in to do list, tell user to add more
+function zeroItems(){
+    document.getElementById('additem').innerHTML = "You Have Zero To Do Items.<br> Please Add An Item!";
 }
 
 
