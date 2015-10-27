@@ -10,16 +10,31 @@ body {
 }
 .header {}
 .listholder {
-    /*    border: 1px solid red;*/
-    width: 40%;
+    width: 45%;
     margin: 0 auto;
+}
+
+li{
+    list-style-type: none;
+    padding-top: 3px;
+    margin-bottom: 10px;
+}
+
+li > label {
+    overflow: hidden;
+    white-space: nowrap;
+    max-width: 90%;
+    text-overflow: ellipsis;
+    vertical-align: bottom;
+    margin: 0;
+
 }
 ul {
     padding: 0;
     margin-left: 10px;
 }
 .bluediv {
-    width: 50%;
+    width: 60%;
     border: 1px solid black;
     background-color: cornflowerblue;
     margin: 0 auto;
@@ -28,9 +43,6 @@ ul {
 .todoitems {
     padding-bottom: 50px;
 }
-li {
-    /*    white-space: nowrap;*/
-}
 label {
     font-size: 20px;
     display: inline-block;
@@ -38,6 +50,7 @@ label {
 li [type=checkbox] {
     height: 20px;
     width: 20px;
+    margin-top: 0;
     margin-right: 8px;
     display: inline-block;
 }
@@ -60,9 +73,6 @@ p {
     font-family: 'Open Sans', sans-serif;
     font-size: 16px;
 }
-li {
-    list-style-type: none;
-}
 .jumbotron {
     background-color: #bbb;
     padding-top: 80px;
@@ -82,7 +92,7 @@ footer {
     background-color: #bbb;
     width: 100%;
     height: 80px;
-    display: inline-flex;
+    display: flex;
     justify-content: center;
     align-items: center;
 }
@@ -128,4 +138,64 @@ footer {
 }
 .userName {
     text-transform: capitalize;
+}
+
+.todoValue {
+
+}
+.todoValue:hover {
+    position: relative;
+    width: 150%;
+    height: 150px;
+}
+
+.todoValue[data-popup]:hover:after {
+  content: attr(data-popup);
+  padding: 4px 8px;
+  color: red;
+  position: absolute;
+  left: 0;
+
+    background-color: aliceblue;
+  z-index: 100;
+  white-space: nowrap;
+    border: 1px solid black;
+    overflow: visible;
+  border-radius: 5px;
+
+}
+
+@media screen and (max-width: 1300px) {
+    .listholder {
+
+    width: 60%;
+    }
+     li > label {
+        max-width: 80%;
+    }
+}
+
+
+@media screen and (max-width: 1000px) {
+    .listholder {
+
+    width: 80%;
+    }
+     li > label {
+        max-width: 80%;
+    }
+}
+
+
+@media screen and (max-width: 650px) {
+
+    .bluediv {
+	width: 95%;
+}
+    .listholder {
+        width: 100%;
+}
+    li > label {
+        max-width: 80%;
+    }
 }

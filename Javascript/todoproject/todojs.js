@@ -14,7 +14,6 @@ var stuffOnYourBrowser = localStorage;
 var toDoItems = stuffOnYourBrowser.getItem(listName).split(",");
 
 
-
 //enables buttons when user inputs any values
 //Both Page
 function enableButtons(text) {
@@ -160,7 +159,7 @@ function addItemToDoToList(item) {
     //createinput checkbox and it's attributes
     var checkboxitem = document.createElement('input');
     checkboxitem.type = "checkbox";
-    checkboxitem.name = item;
+
     checkboxitem.className = "todoitem";
 
     // took a while to figure out that I didn't need quotes or () to call function
@@ -168,11 +167,13 @@ function addItemToDoToList(item) {
 
     //create label for each checkbox
     var label = document.createElement('label');
-    label.htmlfor = "todoitem";
-    label.appendChild(document.createTextNode(item));
+    label.setAttribute("data-popup", item);
+    label.className = "todoValue";
+    label.innerHTML = item;
 
     //create list item
     var node = document.createElement("LI");
+
 
     //append both the checkbox and label to each list item
     node.appendChild(checkboxitem);
@@ -193,7 +194,6 @@ function addItemToDoToList(item) {
 
 //Remove Tasks
 function rem(e) {
-
 
     // define event target is the checkbox
     var eventarget = e.target;
