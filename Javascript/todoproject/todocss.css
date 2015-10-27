@@ -1,25 +1,23 @@
-/* Need to fix footer */
+/*List item whtespacce no wrap
+max width on list item
+overflow to hidden
+text-overflow to ...
+list item - js - hover over /tool tip/ style the shit out of it
+deccription attriteu of */
 
-body{
+body {
     background-color: white;
-
 }
-
-.header{
-}
-
-
-.listholder{
-/*    border: 1px solid red;*/
+.header {}
+.listholder {
+    /*    border: 1px solid red;*/
     width: 40%;
     margin: 0 auto;
 }
-
 ul {
     padding: 0;
     margin-left: 10px;
 }
-
 .bluediv {
     width: 50%;
     border: 1px solid black;
@@ -27,74 +25,60 @@ ul {
     margin: 0 auto;
     margin-bottom: 30px;
 }
-
 .todoitems {
-	padding-bottom: 50px;
+    padding-bottom: 50px;
 }
-
-li{
-/*    white-space: nowrap;*/
+li {
+    /*    white-space: nowrap;*/
 }
-
 label {
     font-size: 20px;
     display: inline-block;
 }
-
 li [type=checkbox] {
     height: 20px;
     width: 20px;
     margin-right: 8px;
     display: inline-block;
 }
-
-.InputArea {
-
-}
-
+.InputArea {}
 form > p {
     margin-bottom: 18px;
 }
-
-#inputlabel{
+#inputlabel {
     margin-bottom: 10px;
 }
-
-h1, h2, h3, h4 {
+h1,
+h2,
+h3,
+h4 {
     text-align: center;
     font-family: 'Dosis', sans-serif;
 }
-
-
-p{
+p {
     text-align: center;
     font-family: 'Open Sans', sans-serif;
     font-size: 16px;
 }
-
-li{
-   list-style-type: none;
+li {
+    list-style-type: none;
 }
-
 .jumbotron {
     background-color: #bbb;
     padding-top: 80px;
     width: 100%;
 }
-
-.numberDisplay{
+.numberDisplay {
     font-size: 20px;
 }
-
-#total, #totaldone {
+#total,
+#totaldone {
     font-weight: bold;
 }
-
 .container h2 {
-	margin-bottom: 0px;
+    margin-bottom: 0px;
 }
-
-footer{
+footer {
     background-color: #bbb;
     width: 100%;
     height: 80px;
@@ -102,20 +86,16 @@ footer{
     justify-content: center;
     align-items: center;
 }
-
 .footerItems {
     margin-right: 50px;
 }
-
 .my-bar-btn {
     margin-left: 30px;
 }
-
 .hide-div {
-	display: none;
+    display: none;
 }
-
-.listName{
+.listName {
     text-align: center;
     font-family: 'Open Sans', sans-serif;
     font-size: 46px;
@@ -125,37 +105,27 @@ footer{
     text-transform: lowercase;
     text-transform: capitalize;
 }
-
 .listName:hover {
-	text-decoration: none;
+    text-decoration: none;
 }
-
-#additem{
+#additem {
     font-weight: bold;
     color: firebrick;
     font-size: 20px;
 }
-
-#dupName{
+#dupName {
     color: red;
     font-weight: bold;
 }
-
-.deleteListButton{
+.deleteListButton {
     margin-left: 20px;
-
 }
-
-.listholderlist{
+.listholderlist {
     display: flex;
     justify-content: center;
     align-items: center;
     margin-left: 10px;
 }
-
-
 .userName {
     text-transform: capitalize;
 }
-
-
