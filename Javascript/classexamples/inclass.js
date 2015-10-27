@@ -1,14 +1,21 @@
+document.getElementById('submit').onclick = favAnimal;
+document.getElementById('ageCalc').onclick = calAge;
+
 var name = "Chris";
 document.getElementById('myname').innerHTML = name;
 
 var age = 29;
-function calAge(age){
-var tenYearsFromNow = age + 10;
-document.getElementById('aboutme').innerHTML = "I am " + age + " years old and in 10 years I will be " + tenYearsFromNow;
+
+function calAge() {
+    var userage = Number(document.getElementById('currentage').value);
+    var yearstoadd = Number(document.getElementById('yearstoadd').value);
+    var tenYearsFromNow = userage + yearstoadd;
+    var string = "I am " + userage + " years old and in " + yearstoadd + " years I will be " + tenYearsFromNow;
+    document.getElementById('aboutme').innerHTML = string;
 }
 
-calAge(age);
-
-function favAnimal(animal){
-document.getElementById('myfact').innerHTML = "I love animals but " + animal + " are the best!! :)";
+function favAnimal() {
+    var input = document.getElementById('animal').value;
+    var animalString = "I love animals but " + input + " are the best!! :)"
+    document.getElementById('myfact').innerHTML = animalString;
 }
