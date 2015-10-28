@@ -167,12 +167,14 @@ function addItemToDoToList(item) {
 
     //create label for each checkbox
     var label = document.createElement('label');
-    label.setAttribute("data-popup", item);
-    label.className = "todoValue";
     label.innerHTML = item;
 
     //create list item
     var node = document.createElement("LI");
+    node.className = "todoValue";
+    node.setAttribute("data-title", item);
+
+
 
 
     //append both the checkbox and label to each list item
