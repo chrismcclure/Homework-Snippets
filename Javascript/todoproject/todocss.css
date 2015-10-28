@@ -39,7 +39,8 @@ ul {
 
 .help{
     background-color: yellow;
-    padding-top: 10px;
+    padding: 10px 10% 10px 10%;
+
 }
 
 .circle{
@@ -51,33 +52,20 @@ ul {
 }
 
 .imageholder{
-    width: 150px;
-    margin-left: 3%;
-    margin-right: 3%;
-    display: inline-block;
-/*    border: 1px solid green;*/
-
-}
-.helpcontentholder {
-    display: inline-block;
-    width: 100%;
-/*    border: 1px solid red;*/
-}
-
-.imageH2 {
-    width: 50%;
-    display: inline-block;
-    text-align: left;
-/*    border: 1px solid blue;*/
-}
-
-.pholders {
-  width: 60%;
+   display: block;
+    width: 20%;
     margin: 0 auto;
+    margin-bottom: 10px;
 }
 
-.pholders > p {
-	 text-align: justify;
+.help > p {
+    font-size: 18px;
+	 text-align: center;
+}
+
+.help > p:last-of-type{
+    font-size: 20px;
+    font-weight: bold;
 }
 
 .todoitems {
