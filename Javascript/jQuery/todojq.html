@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>To Do With JQuery</title>
+
+    <style>
+        .done{
+            text-decoration:line-through;
+        }
+
+        .holder {
+	    display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 40%;
+        border: 1px solid black;
+        background-color: dodgerblue;
+        margin: 0 auto;
+        margin-top: 50px;
+        color: white;
+    }
+        .holder > *{
+        margin-bottom: 10px;
+        }
+
+        .itemclass{
+            color: red;
+            border: 1px solid green;
+        }
+
+        #text{
+        background-color: yellow;
+        }
+
+        .thing{
+            color: yellow;
+            font-family: "Comic Sans MS", "Comic Sans", cursive;
+        }
+    </style>
+</head>
+<body>
+
+   <div class="holder">
+     <h1>To Do Stuff</h1>
+    <textarea class="test" id="text" name="item" id="" cols="30" rows="10"></textarea>
+    <button id="clicky">Click To Add</button>
+    <ul id="list"></ul>
+    <p>Number of todo items:</p>
+    <p id="number"></p>
+    </div>
+<script src="js/jquery-2.1.4.min.js"></script>
+<script src="classjq.js"></script>
+</body>
+</html>

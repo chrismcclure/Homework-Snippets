@@ -40,6 +40,7 @@ ul {
 .help{
     background-color: yellow;
     padding: 10px 10% 10px 10%;
+    display: none;
 
 }
 
