@@ -11,8 +11,9 @@ var stuffOnYourBrowser = localStorage;
 
 //Array of all the items in storage form the correct list name
 // To Do List page
+if(stuffOnYourBrowser.getItem(listName) != null){
 var toDoItems = stuffOnYourBrowser.getItem(listName).split(",");
-
+}
 
 //enables buttons when user inputs any values
 //Both Page
@@ -306,3 +307,37 @@ function itemsInList() {
 function zeroItems() {
     document.getElementById('additem').innerHTML = "You Have Zero To Do Items.<br> Please Add An Item!";
 }
+
+/////////////////////////////////////////
+///  Part 2 of the project, add some sweet jQuery
+////////////////////////////////////////////
+
+
+//If coooke is blank then display help on Select User Screen
+if (document.cookie == ""){
+    $('.help').removeClass('hide');
+    $('.selectUser').addClass('hide');
+    $('#or').addClass('hide');
+}
+
+//If first time loading list, display help
+if(toDoItems == "Make Your First To Do Item!"){
+    $('.sidehelp').removeClass('hide');
+}
+
+//when user clicks exit help button, the side help will hide
+$('#removeSideHelp').click(function(){
+        $('.sidehelp').addClass('hide');
+});
+
+//User clicks help button in havbar, side help appears
+$('#helpButton').click(function(){
+     $('.sidehelp2').removeClass('hide');
+      $('.sidehelp').addClass('hide');
+});
+
+
+//when user clicks exit help button, the side help will hide
+$('#removeSideHelp2').click(function(){
+        $('.sidehelp2').addClass('hide');
+});

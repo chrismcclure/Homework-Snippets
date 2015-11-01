@@ -30,6 +30,7 @@
     </div>
   <a href="SelectUser.html" class="btn btn-primary navbar-btn my-bar-btn">Change Lists</a>
    <a href="SelectUser.html" class="btn btn-danger navbar-btn my-bar-btn" onclick="removeList()">Delete List</a>
+     <a  id="helpButton" class="btn btn-warning navbar-btn my-bar-btn">Get Help</a>
  </nav>
 </div>
 
@@ -40,6 +41,28 @@
       <h2>The Best To Do List Ever!</h2>
   </div>
 </div>
+
+
+  <div class="sidehelp hide">
+      <h2>Zeus has spoken!</h2>
+       <h2>Add items to your to list.</h2>
+      <div class="imageholder-2">
+       <img class="circle"src="images/css-helmet-king.jpg" alt="king helmet">
+       </div>
+       <p>Simply type what you need to do in the input box to the left and click the button labeled "click to add to your to do list."</p>
+       <p>The when you complete the item, click on the checkbox to the left of the item on your to do list.  It will dissaaper like Xerxes pride at  thermopylae.</p>
+       <button type="button" class="btn btn-warning center-block"id="removeSideHelp">Exit Help</button>
+   </div>
+
+   <div class="sidehelp2 hide">
+      <h2>The 300 Spartans and I
+       are here to aide you!</h2>
+      <div class="imageholder-2">
+       <img class="circle"src="images/css-stern-king.jpg" alt="sternking">
+       </div>
+       <p>We are here to help you with more things!!!!!</p>
+       <button type="button" class="btn btn-warning center-block"id="removeSideHelp2">Exit Help</button>
+   </div>
 
 
   <!--Div contains input area for new -->
@@ -53,6 +76,7 @@
         </p>
         </form>
    </div>
+
 
 <!--This div contains the all the UL where I will create LI-->
     <div class="bluediv">
@@ -80,11 +104,12 @@
 
 
 
-<!--Javascript file that I built with my own hands-->
-    <script type="text/javascript" src="todojs.js"> </script>
+
  <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <!-- Latest compiled and minified JavaScript -->
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+<!--Javascript file that I built with my own hands-->
+    <script type="text/javascript" src="todojs.js"> </script>
 </body>
 </html>
