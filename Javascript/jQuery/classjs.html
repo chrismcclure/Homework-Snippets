@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Class JQ stuff</title>
+</head>
+<style>
+    div{
+        font-size: 40px;
+    }
+    </style>
+<body>
+       <section id="mom">
+        <div>Mom</div>
+        </section>
+         <section id="dad">
+        <div>Dad</div>
+        </section>
+<script src="js/jquery-2.1.4.min.js"></script>
+
+    <script>
+       $('#mom').click(function(){
+            $(this).css('color', 'red');
+       });
+
+        //hover can take 2 parameter, mouse in and mouse out
+        $('#dad').hover(mouseOver, mouseOut);
+
+        function mouseOver(){
+            $(this).css('color', 'red');
+
+        };
+
+        function mouseOut(){
+            $(this).css('color', 'green');
+
+        };
+
+
+
+
+    </script>
+
+</body>
+</html>

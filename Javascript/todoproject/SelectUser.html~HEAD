@@ -38,12 +38,12 @@
 </div>
 
 <div class="help hide">
-     <h2 class="imageH2">I'm Leonidas, King of the Spartans and </h2>
+     <h2 class="imageH2">I'm Leonidas, King of the Spartans and your helper!</h2>
    <div class="imageholder">
     <img src="images/css-angry-king.jpg"  class="circle "alt="king face">
     </div>
 
-      <p>your helper while creating and maintaining your to do lists.  Any time you need help, click the orange help button on the top navbar and my 300 Spartans and I will be at your service.</p>
+      <p>I'll service you while creating and maintaining your to do lists.  Any time you need help, click the orange help button on the top navbar and my 300 Spartans and I will be at your service.</p>
     <p>I see there are no current list avialable.</p>
     <p>  Your first step is to create a list.</p>
 </div>
