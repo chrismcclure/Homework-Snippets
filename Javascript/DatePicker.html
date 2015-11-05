@@ -2,25 +2,37 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Document</title>
+    <title>Day Count Down</title>
     <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.4/themes/smoothness/jquery-ui.css">
     <style>
+        .center{
+            width: 50%;
+            margin: 0 auto;
+            margin-top: 50px;
+        }
 
+        #notRight{
+            color: red;
+
+        }
     </style>
 </head>
 <body>
 
+<div class="center">
+<p id="notRight"></p>
 <label for="from">From</label>
 <input type="text" id="from" name="from">
 <label for="to">to</label>
 <input type="text" id="to" name="to">
 
-<button id="datebutton"> Calculate Date</button>
+<button id="datebutton"> Calculate Days Between</button>
 
 
 <p> Here is your start date: <span id="startDate"></span></p>
 <p> Here is your end date: <span id="endDate"></span></p>
 <p> Total days betwen: <span id="daysBetween"></span></p>
+</div>
 <!-- Jquery Google CDN   -->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
 <!--Jquery UI CDN     -->
